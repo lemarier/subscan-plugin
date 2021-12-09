@@ -10,7 +10,7 @@ You can write ui conf directly to automatically display the ui.
 ### Install gen tool
 
 ```shell script
-$ go get github.com/itering/subscan-plugin/tools/gen-plugin
+$ go get github.com/lemarier/subscan-plugin/tools/gen-plugin
 ```
 
 ### Gen plugin
@@ -21,6 +21,7 @@ $ gen-plugin balance
 ```
 
 The directory structure is as follows:
+
 ```
 ├── dao
 │   └── dao.go
@@ -47,18 +48,20 @@ func init() {
 ```
 
 ### UI
+
 The UI part is rely on [amis](https://github.com/baidu/amis/blob/master/README-en.md), a Low-Code frontend UI Framework, which allows us to develop various page via different components by only using JSON configuration.
 
 First, plugin list is fetched via /api/scan/plugins. After that, user can click different plugin in navbar and will be redirected to the plugin page. When the page is mounted, we init amis using the plugin info in JSON format fetched via /api/scan/plugins/ui to generate corresponding view.
 
 An example page using basic table view component is as follow.
+
 ```
 // plugin balance ui config in json format
 {
   "type": "page",
   "body": {
     // component type, 'crud' is a basic table view component
-    "type": "crud", 
+    "type": "crud",
     "api": {
       "method": "post",
       "url": "api/plugin/balance/accounts",
@@ -91,4 +94,3 @@ An example page using basic table view component is as follow.
 ```
 
 refer to [amis docs](https://baidu.gitee.io/amis/docs/index) for further config detail.
-

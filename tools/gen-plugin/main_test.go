@@ -8,15 +8,15 @@ import (
 )
 
 func Test_regexpReplace(t *testing.T) {
-	mod := regexpReplace(`module\s+(?P<name>[\S]+)`, `module github.com/itering/subscan-plugin`, "$name")
-	assert.Equal(t, "github.com/itering/subscan-plugin", mod)
+	mod := regexpReplace(`module\s+(?P<name>[\S]+)`, `module github.com/lemarier/subscan-plugin`, "$name")
+	assert.Equal(t, "github.com/lemarier/subscan-plugin", mod)
 	mod = regexpReplace(`module\s+(?P<name>[\S]+)`, `xx`, "$name")
 	assert.Equal(t, "", mod)
 }
 
 func Test_modPath(t *testing.T) {
 	path, _ := filepath.Abs("")
-	assert.Equal(t, "github.com/itering/subscan-plugin/tools/", modPath(path))
+	assert.Equal(t, "github.com/lemarier/subscan-plugin/tools/", modPath(path))
 }
 
 func Test_upperCamel(t *testing.T) {

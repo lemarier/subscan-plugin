@@ -1,4 +1,4 @@
-module github.com/itering/subscan-plugin
+module github.com/lemarier/subscan-plugin
 
 go 1.12
 

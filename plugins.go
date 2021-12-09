@@ -1,8 +1,8 @@
 package subscan_plugin
 
 import (
-	"github.com/itering/subscan-plugin/router"
-	"github.com/itering/subscan-plugin/storage"
+	"github.com/lemarier/subscan-plugin/router"
+	"github.com/lemarier/subscan-plugin/storage"
 	"github.com/shopspring/decimal"
 )
 
