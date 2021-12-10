@@ -32,7 +32,7 @@ type DB interface {
 	FindBy(record interface{}, query interface{}, option *Option) (int, bool)
 
 	// Allow to find the total numbers of elements
-	CountBy(query interface{}, option *Option) int
+	CountBy(record interface{}, query interface{}) int
 
 	// Only can exec plugin relate tables
 	// Migration
