@@ -31,6 +31,9 @@ type DB interface {
 	// Query ** no prefix ** table default, option PluginPrefix can specify other plugin model
 	FindBy(record interface{}, query interface{}, option *Option) (int, bool)
 
+	// Allow to find the total numbers of elements
+	CountBy(query interface{}, option *Option) int
+
 	// Only can exec plugin relate tables
 	// Migration
 	AutoMigration(model interface{}) error
